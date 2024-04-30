@@ -7,10 +7,68 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Money X Change</title>
 </head>
+<style>
+    h1 {
+        text-align: center;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    label {
+        font-size: 1.2rem;
+    }
+    select, input {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .currency-converter {
+        display: flex;
+        flex-direction: column;
+    }
+    button {
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        margin: 1rem;
+        cursor: pointer;
+    }
+</style>
 <body>
     <div class="app-container">
-        <h1>Template</h1>
-        <i class="fa-solid fa-house i-home"></i>
+        <div class="currency-converter">
+            <form>
+                <label for="amount">Amount</label>
+                <input type="number" name="amount" id="amount" required>
+                <div class="currency-inputs">
+                    <div class="form-group">
+                        <label for="from">From:</label>
+                        <select name="from" id="from" required>
+                            <option value="GBP">GB Pounds</option>
+                            <option value="EUR">Euros</option>
+                            <option value="USD">US Dollars</option>
+                            <option value="JPY">Japanese Yen</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="to">To:</label>
+                        <select name="to" id="to" required>
+                            <option value="GBP">GB Pounds</option>
+                            <option value="EUR">Euros</option>
+                            <option value="USD">US Dollars</option>
+                            <option value="JPY">Japanese Yen</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" id="convert">Submit</button>
+            </form>
+            <div id="result"></div>
+        </div>
+        <div id="currencies">
+            <h1>Choose a country from the map below</h1>
+        </div>
+        <div class="world-map"></div>
     </div>
     <script src="./scripts/script.js"></script>
 </body>
